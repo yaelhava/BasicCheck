@@ -10,7 +10,6 @@ make &> output.txt
 comp=$?
 run=$2
 shift 2
-comp="FAIL" 
 memleaks="FAIL"
 threadrace="FAIL"
 
@@ -36,6 +35,8 @@ if [ $comp -eq 0 ]; then
         threadrace="FAIL"    
         tr=1
     fi
+else
+    comp="FAIL"
 fi    
 
 
